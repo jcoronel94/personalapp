@@ -1,0 +1,69 @@
+<template>
+  <md-app md-mode="reveal">
+    <md-app-toolbar class="md-primary">
+      <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <span class="md-title">COGITO</span>
+    </md-app-toolbar>
+    <md-app-drawer :md-active.sync="menuVisible">
+      <md-toolbar class="md-transparent" md-elevation="0"
+        >Navigation</md-toolbar
+      >
+
+      <md-list>
+        <md-list-item>
+          <md-icon>home</md-icon>
+          <span class="md-list-item-text">
+            <router-link :to="{ name: 'hello' }">Home</router-link>
+          </span>
+        </md-list-item>
+
+        <md-list-item>
+          <md-icon>assignment</md-icon>
+          <span class="md-list-item-text">
+            <router-link :to="{ name: 'projects' }">Projects</router-link>
+          </span>
+        </md-list-item>
+
+        <md-list-item>
+          <md-icon>assignment_ind</md-icon>
+          <span class="md-list-item-text">Resume</span>
+        </md-list-item>
+      </md-list>
+    </md-app-drawer>
+
+    <md-app-content>
+      content //place to route
+
+      <router-view :key="$route.path" />
+    </md-app-content>
+  </md-app>
+</template>
+
+<script>
+export default {
+  name: "Reveal",
+  data: () => ({
+    menuVisible: false,
+  }),
+};
+</script>
+
+
+<style lang="scss" scoped>
+.md-app {
+  border: 1px solid rgba(#000, 0.12);
+  height: 100vh;
+  min-height: 100%;
+}
+
+// Demo purposes only
+.md-drawer {
+  width: 230px;
+  max-width: calc(100vw - 125px);
+}
+.md-content {
+  min-height: 100%;
+}
+</style>

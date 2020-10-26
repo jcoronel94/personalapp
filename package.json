@@ -8,10 +8,15 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
-    "vue": "^2.6.12"
+    "vue": "^2.6.12",
+    "vue-material": "^1.0.0-beta-15",
+    "vue-router": "^3.4.7"
   },
   "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.3",
     "@vue/cli-plugin-babel": "^4.5.8",
     "@vue/cli-plugin-eslint": "^4.5.8",
     "@vue/cli-service": "^4.5.8",
@@ -32,7 +37,12 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "vue/html-self-closing": 1,
+      "no-console": 0,
+      "no-unused-labels": "off",
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": [
     "> 1%",
