@@ -1,15 +1,14 @@
 <template>
   <div>
-    <md-card md-with-hover>
+    <md-card v-for="project in projects" :key="project.id" md-with-hover>
       <md-ripple>
         <md-card-header>
-          <div class="md-title">Card with hover effect</div>
-          <div class="md-subhead">It also have a ripple</div>
+          <div class="md-title">{{ project.name }}</div>
+          <div class="md-subhead"><a :href="project.html_url"> html_url</a></div>
         </md-card-header>
 
         <md-card-content>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque
-          ea, nostrum odio. Dolores, sed accusantium quasi non.
+          {{ project.description }}
         </md-card-content>
 
         <md-card-actions>
@@ -24,11 +23,30 @@
 
 
 <script>
+import { mapActions, mapState, mapGetters } from "vuex";
+import pageLoader from "@/mixins/pageLoader";
+
 export default {
+  computed: {
+    ...mapState({
+      projects: (state) => state.projects.items,
+    }),
+  },
+  mixins: [pageLoader],
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    ...mapActions("projects", ["fetchProjects"]),
+  },
+  created() {
+    Promise.all([this.fetchProjects()])
+      .then(() => this.pageLoader_resolveData())
+      .catch((err) => {
+        console.error(err);
+        this.pageLoader_resolveData();
+      });
+  },
 };
 </script>
 

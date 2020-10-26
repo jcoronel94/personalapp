@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import projects from './modules/github'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-
+    projects
   },
   mutations: {
     setItems (state, {resource, items}) {
