@@ -21,10 +21,11 @@ export default {
 @include md-register-theme(
   "default",
   (
-    primary: md-get-palette-color(blue, A200),
+    primary: #26c6da,
     // The primary color of your applicatio
-    accent: md-get-palette-color(red, A200)
-      // The accent or secondary colo,,,,,,,,,
+    accent: #9fa8da,
+    //theme:dark
+    // The accent or secondary colo,,,,,,,,,,,,
   )
 );
 
@@ -39,5 +40,63 @@ html,
 body {
   height: 100%;
   margin: 0;
+}
+
+.md-toolbar,
+.md-toolbar-row {
+  justify-content: center;
+}
+
+.md-toolbar .md-toolbar-row {
+  min-height: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 576px) {
+  .footer .container,
+  .md-toolbar-row,
+  .section .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .footer .container,
+  .md-toolbar-row,
+  .section .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .footer .container,
+  .md-toolbar-row,
+  .section .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .footer .container,
+  .md-toolbar-row,
+  .section .container {
+    max-width: 1140px;
+  }
+}
+
+.container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 </style>

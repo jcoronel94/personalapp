@@ -1,52 +1,22 @@
 <template>
-  <md-app md-mode="reveal">
-    <md-app-toolbar class="md-primary">
-      <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
-        <md-icon>menu</md-icon>
-      </md-button>
-      <span class="md-title">COGITO</span>
-    </md-app-toolbar>
-    <md-app-drawer :md-active.sync="menuVisible">
-      <md-toolbar class="md-transparent" md-elevation="0"
-        >Navigation</md-toolbar
-      >
-
-      <md-list>
-        <md-list-item>
-          <md-icon>home</md-icon>
-          <span class="md-list-item-text">
-            <router-link :to="{ name: 'hello' }">Home</router-link>
-          </span>
-        </md-list-item>
-
-        <md-list-item>
-          <md-icon>assignment</md-icon>
-          <span class="md-list-item-text">
-            <router-link :to="{ name: 'projects' }">Projects</router-link>
-          </span>
-        </md-list-item>
-
-        <md-list-item>
-          <md-icon>assignment_ind</md-icon>
-          <span class="md-list-item-text">Resume</span>
-        </md-list-item>
-      </md-list>
-    </md-app-drawer>
-
-    <md-app-content>
-      content //place to route
-
-      <router-view :key="$route.path" />
-    </md-app-content>
-  </md-app>
+  <!-- <md-app md-mode="reveal"> -->
+  <div>
+    <toolbar />
+    <MainContainer/>
+  </div>
 </template>
 
 <script>
+import MainContainer from "@/components/MainContainer";
+import Toolbar from "@/components/Toolbar";
+
 export default {
   name: "Reveal",
-  data: () => ({
-    menuVisible: false,
-  }),
+ 
+  components: {
+    MainContainer,
+    Toolbar,
+  },
 };
 </script>
 
@@ -65,5 +35,36 @@ export default {
 }
 .md-content {
   min-height: 100%;
+}
+
+.md-toolbar {
+  box-shadow: none;
+  padding-top: 25px;
+  > .md-title {
+    color: #dcdada;
+  }
+  &.md-absolute {
+    position: fixed;
+    z-index: 1030;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  }
+}
+
+.md-toolbar-section {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  &-start {
+    justify-content: flex-start;
+    order: 0;
+  }
+
+  &-end {
+    justify-content: flex-end;
+    order: 10;
+  }
 }
 </style>
