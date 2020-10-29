@@ -17,15 +17,14 @@ export default {
 
 <style lang="scss">
 @import "~vue-material/dist/theme/engine"; // Import the theme engine
-
 @include md-register-theme(
   "default",
   (
-    primary: #26c6da,
+    primary: #30517f,
     // The primary color of your applicatio
     accent: #9fa8da,
     //theme:dark
-    // The accent or secondary colo,,,,,,,,,,,,
+    // The accent or secondary colo,,,,,,,,,,,,,
   )
 );
 
@@ -98,5 +97,13 @@ body {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+}
+
+.card-link {
+  color: inherit !important;
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 </style>
