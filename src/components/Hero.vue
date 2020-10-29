@@ -44,6 +44,16 @@ export default {
       this.$store.commit("scroll/setYPosition", yPosition);
     },
     handleScroll(event) {
+       console.log(window.pageYOffset)
+        var scroll =  1- (((window.pageYOffset + 1) / 280) );
+
+        if(scroll <0){
+            scroll=0
+        }
+
+        // if(scroll)
+        console.log(scroll)
+       document.body.style.setProperty('--scroll',scroll)
       this.setYPosition(this.$refs.maincard.getBoundingClientRect().top);
     },
   },
@@ -155,7 +165,7 @@ header {
 
 @keyframes rotate-up {
   100% {
-    transform: rotateZ(-4deg);
+    transform: rotateZ(calc(-4deg * var(--scroll)));
   }
 }
 </style>
