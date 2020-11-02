@@ -52,7 +52,7 @@ export default {
     scrollPosition: null,
     isLoaded: false,
     igLink: "https://www.instagram.com/overboard182",
-    lkLink: "microsoft-edge:https://www.linkedin.com/in/jonathan-coronel/"
+    lkLink: "https://www.linkedin.com/in/jonathan-coronel/"
   }),
   methods: {
     handleScroll(event) {

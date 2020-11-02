@@ -9,7 +9,7 @@
       <slide v-for="book of books" :key="book.id">
         <md-card>
           <md-card-media>
-            <img class="slide-item" :src="book.book.image_url" alt="People" />
+            <img class="slide-item" :src=" book.book.image_url ? book.book.image_url :  book.book.image_url" alt="People" />
           </md-card-media>
         </md-card>
       </slide>
