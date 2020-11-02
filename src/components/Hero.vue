@@ -16,7 +16,6 @@
 
 
 <script>
-import { mapActions, mapState, mapGetters } from "vuex";
 export default {
   props: {
     img: {
@@ -43,7 +42,7 @@ export default {
     setYPosition(yPosition) {
       this.$store.commit("scroll/setYPosition", yPosition);
     },
-    handleScroll(event) {
+    handleScroll() {
        console.log(window.pageYOffset)
         var scroll =  1- (((window.pageYOffset + 1) / 280) );
 
@@ -58,7 +57,7 @@ export default {
     },
   },
   mounted() {
-    this.handleScroll(null); //seed the event
+    this.handleScroll(); //seed the event
     window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {
