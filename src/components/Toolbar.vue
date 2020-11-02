@@ -21,6 +21,10 @@
           </router-link>
         </div>
         <div class="md-toolbar-section-end">
+          <md-button :href="`${lkLink}`" class="md-icon-button">
+            <i  :class="{ white: !isOverMainCard }" class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+          </md-button>
+
           <md-button :href="`${igLink}`" class="md-icon-button">
             <i
               :class="{ white: !isOverMainCard }"
@@ -48,10 +52,11 @@ export default {
     scrollPosition: null,
     isLoaded: false,
     igLink: "https://www.instagram.com/overboard182",
+    lkLink: "microsoft-edge:https://www.linkedin.com/in/jonathan-coronel/"
   }),
   methods: {
     handleScroll(event) {
-      console.log(this.showNavigation)
+      console.log(this.showNavigation);
       if (this.$refs) {
         this.visible = false;
       }
@@ -132,5 +137,4 @@ export default {
 .white {
   color: white !important;
 }
-
 </style>

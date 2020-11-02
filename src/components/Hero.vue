@@ -6,10 +6,7 @@
         src="https://cdn2.scratch.mit.edu/get_image/gallery/27493645_170x100.png"
       />
       <h1 class="header-title animate-pop-in">Hi, I'm Jonathan!</h1>
-      <h3 class="header-subtitle animate-pop-in">
-        Come hang out for a bit
-      </h3>
-
+      <h3 class="header-subtitle animate-pop-in">Come hang out for a bit</h3>
     </section>
   </header>
 </template>
@@ -32,6 +29,12 @@ export default {
       required: false,
     },
   },
+  data(){
+      return {
+        scrollModifier:1
+      }
+     
+  },
   computed: {
     maincardYPosition() {
       var top = this.$refs.maincard.getBoundingClientRect().top;
@@ -44,18 +47,18 @@ export default {
       this.$store.commit("scroll/setYPosition", yPosition);
     },
     handleScroll(event) {
-       console.log(window.pageYOffset)
-        var scroll =  1- (((window.pageYOffset + 1) / 280) );
+     this.scrollModifier = 1 - (window.pageYOffset + 1) / 280;
 
-        if(scroll <0){
-            scroll=0
-        }
+      if (this.scrollModifier < 0) {
+        this.scrollModifier = 0;
+      }
 
-        // if(scroll)
-        console.log(scroll)
-       document.body.style.setProperty('--scroll',scroll)
+      document.body.style.setProperty("--scroll", this.scrollModifier);
       this.setYPosition(this.$refs.maincard.getBoundingClientRect().top);
     },
+  },
+  created(){
+
   },
   mounted() {
     this.handleScroll(null); //seed the event
@@ -164,8 +167,11 @@ header {
 }
 
 @keyframes rotate-up {
+ 
+
   100% {
-    transform: rotateZ(calc(-4deg * var(--scroll)));
+    transform: rotateZ(calc(-4deg * var(--scroll) ));
   }
+ 
 }
 </style>
