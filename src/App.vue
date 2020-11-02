@@ -6,7 +6,6 @@
 
 <script>
 import Layout from "@/components/Layout";
-
 export default {
   name: "App",
   components: {
@@ -27,25 +26,20 @@ export default {
     // The accent or secondary colo,,,,,,,,,,,,,
   )
 );
-
 @import "~vue-material/dist/theme/all"; // Apply the theme
-
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 html,
 body {
   height: 100%;
   margin: 0;
 }
-
 .md-toolbar,
 .md-toolbar-row {
   justify-content: center;
 }
-
 .md-toolbar .md-toolbar-row {
   min-height: auto;
   padding-left: 15px;
@@ -79,7 +73,6 @@ body {
     max-width: 1140px;
   }
 }
-
 .container {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -98,7 +91,6 @@ body {
   margin-right: auto;
   position: relative;
 }
-
 .card-link {
   color: inherit !important;
   text-decoration: none !important;

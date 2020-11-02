@@ -13,7 +13,6 @@
 
 
 <script>
-import { mapActions, mapState, mapGetters } from "vuex";
 export default {
   props: {
     img: {
@@ -61,7 +60,7 @@ export default {
 
   },
   mounted() {
-    this.handleScroll(null); //seed the event
+    this.handleScroll(); //seed the event
     window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {

@@ -1,7 +1,6 @@
 <template>
   <div>
     <span class="md-display-1">Github Projects</span>
-
     <div
       v-if="projects && projects.length > 0 && pageLoader_isDataLoaded"
       class="md-layout md-alignment-center-flex-start"
@@ -28,7 +27,9 @@
       </md-card>
     </div>
 
-    <div v-else-if="!pageLoader_isDataLoaded && projects && projects.length <= 0">
+    <div
+      v-else-if="!pageLoader_isDataLoaded && projects && projects.length <= 0"
+    >
       <div style="height: 200px; margin: 200px 50% 0">
         <md-progress-spinner md-mode="indeterminate"></md-progress-spinner>
       </div>
@@ -45,8 +46,8 @@
 </template>
 
 <script>
-import { mapActions, mapState, mapGetters } from "vuex";
-import pageLoader from "@/mixins/pageLoader";
+import {mapActions, mapState, mapGetters} from 'vuex';
+import pageLoader from '@/mixins/pageLoader';
 
 export default {
   computed: {
@@ -59,7 +60,7 @@ export default {
     return {};
   },
   methods: {
-    ...mapActions("projects", ["fetchProjects"]),
+    ...mapActions('projects', ['fetchProjects']),
   },
   created() {
     Promise.all([this.fetchProjects()])
@@ -71,7 +72,6 @@ export default {
   },
 };
 </script>
-
 
 <style lang="scss" scoped>
 .md-card {
@@ -89,6 +89,4 @@ export default {
 .margin-bottom-20 {
   margin-bottom: 20px;
 }
-
-
 </style>
