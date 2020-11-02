@@ -2,6 +2,7 @@
   <!-- <md-app md-mode="reveal"> -->
   <div>
     <toolbar />
+    <Hero />
     <MainContainer/>
   </div>
 </template>
@@ -9,6 +10,7 @@
 <script>
 import MainContainer from "@/components/MainContainer";
 import Toolbar from "@/components/Toolbar";
+import Hero from "@/components/Hero";
 
 export default {
   name: "Reveal",
@@ -16,6 +18,7 @@ export default {
   components: {
     MainContainer,
     Toolbar,
+    Hero
   },
 };
 </script>

@@ -36,6 +36,11 @@ body {
   height: 100%;
   margin: 0;
 }
+
+.center{
+  text-align: center;
+}
+
 .md-toolbar,
 .md-toolbar-row {
   justify-content: center;
@@ -98,4 +103,20 @@ body {
     text-decoration: none !important;
   }
 }
+
+.bg-container{
+    margin-bottom:30px;
+    &:nth-child(odd){
+      background-color: #f1efef;
+    }
+}
+
+// .wrapper-container{
+//     &:nth-child(even){
+//       background-color: black;
+//     }
+//      &:nth-child(odd){
+//       background-color: grey;
+//     }
+// }
 </style>

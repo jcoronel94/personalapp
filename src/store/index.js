@@ -2,12 +2,14 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import projects from './modules/github'
 import scroll from './modules/scroll'
+import books from './modules/goodreads'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
     projects,
-    scroll
+    scroll,
+    books
   },
   mutations: {
     setItems (state, {resource, items}) {

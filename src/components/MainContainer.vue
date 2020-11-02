@@ -1,25 +1,22 @@
 <template>
   <div class="wrapper">
-     <Hero />
     <div class="main main-raised">
       <div class="main-section section">
-        <div class="container">
           <router-view :key="$route.path" />
-        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Hero from '@/components/Hero'
+
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
   components:{
-    Hero
+
   }
 };
 </script>
@@ -53,9 +50,6 @@ export default {
   align-content: center;
   align-self: flex-start;
   margin: 180px auto;
-}
-.container {
-  display: flex;
 }
 
 
