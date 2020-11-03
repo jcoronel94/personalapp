@@ -13,6 +13,7 @@
     "core-js": "^3.6.5",
     "emailjs-com": "^2.6.3",
     "vue": "^2.6.12",
+    "vue-breakpoint": "^2.1.0",
     "vue-carousel": "^0.18.0",
     "vue-material": "^1.0.0-beta-15",
     "vue-router": "^3.4.7",

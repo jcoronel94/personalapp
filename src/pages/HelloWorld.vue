@@ -5,11 +5,11 @@
         <about />
       </div>
     </div>
-    <div class="bg-container">
+    <!-- <div class="bg-container">
       <div class="container">
         <book-detail />
       </div>
-    </div>
+    </div> -->
     <div class="bg-container">
       <div class="container">
         <email />
@@ -31,7 +31,7 @@ export default {
   components: {
     Email,
     About,
-    BookDetail
+    // BookDetail
   },
 };
 </script>

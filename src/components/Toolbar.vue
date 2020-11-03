@@ -12,7 +12,7 @@
       <div class="md-toolbar-row">
         <div class="md-toolbar-section-start">
           <router-link class="card-link" to="home">
-            <span
+            <span v-if="!(isNavOpen && !isOverMainCard)"
               :class="{ white: !isOverMainCard }"
               class="md-title"
               style="flex: 1"
@@ -32,8 +32,8 @@
               aria-hidden="true"
             ></i>
           </md-button>
-          <md-button @click="showNavigation = true" class="md-icon-button">
-            <md-icon :class="{ white: !isOverMainCard }">more_vert</md-icon>
+          <md-button @click="emitSideNav" class="md-icon-button">
+            <md-icon :class="{ white: !isOverMainCard }">menu</md-icon>
           </md-button>
         </div>
       </div>
@@ -46,6 +46,11 @@ import { mapActions, mapState, mapGetters } from "vuex";
 
 export default {
   name: "Reveal",
+  props:{
+    isNavOpen:{
+      type:Boolean
+    }
+  },
   data: () => ({
     isOverMainCard: false,
     showNavigation: false,
@@ -71,6 +76,9 @@ export default {
         this.isOverMainCard = true;
       }
     },
+    emitSideNav(e){
+      this.$emit("sideNav")
+    }
   },
   computed: {
     toolbarClasses() {
@@ -84,6 +92,7 @@ export default {
     }),
   },
   mounted() {
+    console.log(this.isNavOpen)
     this.handleScroll(null);
     window.addEventListener("scroll", this.handleScroll);
     this.isLoaded = true;

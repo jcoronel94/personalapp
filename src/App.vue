@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import Layout from "@/components/Layout";
+import Layout from '@/components/Layout';
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Layout,
   },
@@ -15,18 +15,18 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~vue-material/dist/theme/engine"; // Import the theme engine
+@import '~vue-material/dist/theme/engine'; // Import the theme engine
 @include md-register-theme(
-  "default",
+  'default',
   (
     primary: #30517f,
     // The primary color of your applicatio
-    accent: #9fa8da,
+      accent: #9fa8da,
     //theme:dark
-    // The accent or secondary colo,,,,,,,,,,,,,
+      // The accent or secondary colo,,,,,,,,,,,,,,,,
   )
 );
-@import "~vue-material/dist/theme/all"; // Apply the theme
+@import '~vue-material/dist/theme/all'; // Apply the theme
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,7 +37,7 @@ body {
   margin: 0;
 }
 
-.center{
+.center {
   text-align: center;
 }
 
@@ -104,11 +104,19 @@ body {
   }
 }
 
-.bg-container{
-    margin-bottom:30px;
-    &:nth-child(odd){
-      background-color: #f1efef;
-    }
+.bg-container {
+  margin-bottom: 20px;
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  &:nth-child(odd) {
+    background-color: #f1efef;
+  }
+}
+
+.md-overlay{
+   position:fixed !important;
 }
 
 // .wrapper-container{
