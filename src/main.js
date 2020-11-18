@@ -15,10 +15,10 @@ Vue.use(BreakpointPlugin, {
   mobile: { maxWidth: "600px" },
   mobilePortrait: { maxWidth: "600px", orientation: "portrait" },
   tablet: { minWidth: "601px", maxWidth: "800px" },
-  sm: { minWidth: "601px" , maxWidth:"960px" },
-  md: { minWidth: "961px" , maxWidth:" 1280px" },
-  lg: { minWidth: "1281px" , maxWidth:"1920px" },
-  xl: { minWidth: "1921px" }
+  small: { minWidth: "601px" , maxWidth:"960px" },
+  medium: { minWidth: "961px" , maxWidth:" 1280px" },
+  large: { minWidth: "1281px" , maxWidth:"1920px" },
+  xlarge: { minWidth: "1921px" }
 
 });
 

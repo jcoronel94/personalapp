@@ -12,7 +12,8 @@
       <div class="md-toolbar-row">
         <div class="md-toolbar-section-start">
           <router-link class="card-link" to="home">
-            <span v-if="!(isNavOpen && !isOverMainCard)"
+            <span
+              v-if="!(isNavOpen && !isOverMainCard)"
               :class="{ white: !isOverMainCard }"
               class="md-title"
               style="flex: 1"
@@ -22,7 +23,11 @@
         </div>
         <div class="md-toolbar-section-end">
           <md-button :href="`${lkLink}`" class="md-icon-button">
-            <i  :class="{ white: !isOverMainCard }" class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+            <i
+              :class="{ white: !isOverMainCard }"
+              class="fa fa-linkedin-square fa-2x"
+              aria-hidden="true"
+            />
           </md-button>
 
           <md-button :href="`${igLink}`" class="md-icon-button">
@@ -30,7 +35,7 @@
               :class="{ white: !isOverMainCard }"
               class="fa fa-instagram fa-2x"
               aria-hidden="true"
-            ></i>
+            />
           </md-button>
           <md-button @click="emitSideNav" class="md-icon-button">
             <md-icon :class="{ white: !isOverMainCard }">menu</md-icon>
@@ -43,13 +48,13 @@
 
 <script>
 import { mapActions, mapState, mapGetters } from "vuex";
-
+import breakpoint from "@/mixins/breakpoint";
 export default {
   name: "Reveal",
-  props:{
-    isNavOpen:{
-      type:Boolean
-    }
+  props: {
+    isNavOpen: {
+      type: Boolean,
+    },
   },
   data: () => ({
     isOverMainCard: false,
@@ -57,8 +62,11 @@ export default {
     scrollPosition: null,
     isLoaded: false,
     igLink: "https://www.instagram.com/overboard182",
-    lkLink: "https://www.linkedin.com/in/jonathan-coronel/"
+    lkLink: "https://www.linkedin.com/in/jonathan-coronel/",
   }),
+  mixins: {
+    breakpoint,
+  },
   methods: {
     handleScroll(event) {
       console.log(this.showNavigation);
@@ -76,9 +84,9 @@ export default {
         this.isOverMainCard = true;
       }
     },
-    emitSideNav(e){
-      this.$emit("sideNav")
-    }
+    emitSideNav(e) {
+      this.$emit("sideNav");
+    },
   },
   computed: {
     toolbarClasses() {
@@ -92,7 +100,7 @@ export default {
     }),
   },
   mounted() {
-    console.log(this.isNavOpen)
+    console.log(this.isNavOpen);
     this.handleScroll(null);
     window.addEventListener("scroll", this.handleScroll);
     this.isLoaded = true;

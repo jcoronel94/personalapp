@@ -1,24 +1,37 @@
 <template>
   <!-- <md-app md-mode="reveal"> -->
   <div>
-    <toolbar :isNavOpen="showNavigation" @sideNav="showNavigation=!showNavigation" />
+    <toolbar
+      :isNavOpen="showNavigation"
+      @sideNav="showNavigation = !showNavigation"
+    />
     <Hero />
-    <md-drawer class="sidenav" :md-active.sync="showNavigation" >
-      <md-toolbar class="md-transparent" md-elevation="0">
-        <span class="md-title">COGITO</span>
+    <md-drawer class="sidenav" :class="{layer : showNavigation}" :md-active.sync="showNavigation">
+      <md-toolbar class="md-transparent" md-elevation="0" >
+        <router-link   @click="showNavigation = false" class="no-decor" to="/">
+          <span class="md-title">COGITO</span>
+        </router-link>
       </md-toolbar>
-
+      <!-- <router-link class="card-link" to="home">
+            <span v-if="!(isNavOpen && !isOverMainCard)"
+              :class="{ white: !isOverMainCard }"
+              class="md-title"
+              style="flex: 1"
+              >COGITO</span
+            >
+          </router-link> -->
       <md-list>
-        <md-list-item>
-          <md-icon>move_to_inbox</md-icon>
-          <span class="md-list-item-text">Inbox</span>
+        <md-list-item to="projects" @click="showNavigation = false">
+          <md-icon>folder</md-icon>
+          <span class="md-list-item-text">Projects</span>
         </md-list-item>
 
-        <md-list-item>
-          <md-icon>send</md-icon>
-          <span class="md-list-item-text">Sent Mail</span>
+      
+        <md-list-item :href="resumeLink" class="no-decor">
+          <md-icon>article</md-icon>
+          <span class="md-list-item-text"> Resume </span>
         </md-list-item>
-
+      
       </md-list>
     </md-drawer>
     <MainContainer />
@@ -26,16 +39,21 @@
 </template>
 
 <script>
-import MainContainer from '@/components/MainContainer';
-import Toolbar from '@/components/Toolbar';
-import Hero from '@/components/Hero';
+import MainContainer from "@/components/MainContainer";
+import Toolbar from "@/components/Toolbar";
+import Hero from "@/components/Hero";
 
 export default {
-  name: 'Reveal',
-  data(){
-    return{
-      showNavigation:false
-    }
+  name: "Reveal",
+  data() {
+    return {
+      showNavigation: false,
+    };
+  },
+  computed: {
+    resumeLink() {
+      return process.env.VUE_APP_RESUME;
+    },
   },
   components: {
     MainContainer,
@@ -46,12 +64,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.md-drawer{
-  position:fixed;
+.md-drawer {
+  position: fixed;
 }
 
-.sidenav{
+.sidenav {
   // z-index: 10000;
 }
 
@@ -102,5 +119,7 @@ export default {
   // 90px
 }
 
- 
+.layer{
+  z-index: 10000;
+}
 </style>

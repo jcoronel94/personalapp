@@ -119,12 +119,13 @@ body {
    position:fixed !important;
 }
 
-// .wrapper-container{
-//     &:nth-child(even){
-//       background-color: black;
-//     }
-//      &:nth-child(odd){
-//       background-color: grey;
-//     }
-// }
+
+.no-decor{
+  text-decoration: none;
+}
+
+a:not(.md-button):hover{
+  text-decoration: none !important;
+}
+
 </style>
