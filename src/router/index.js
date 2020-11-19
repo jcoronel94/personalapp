@@ -4,6 +4,7 @@ import Router from 'vue-router'
 
 import HelloWorld from '@/pages/HelloWorld'
 import Projects from '@/pages/Projects'
+import BlogPostList from '@/pages/BlogPostList'
 
 Vue.use(Router)
 
@@ -17,6 +18,11 @@ const router = new Router({
             path: '/projects',
             name: 'projects',
             component: Projects
+        },
+        {
+            path: '/blogs',
+            name: 'blogs',
+            component: BlogPostList
         }
     ],
     mode: 'history'

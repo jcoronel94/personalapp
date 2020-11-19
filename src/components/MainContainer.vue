@@ -36,18 +36,10 @@ export default {
       0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   }
   &-section {
-    padding: 70px 0;
+    padding: 60px 0;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-tap-highlight-color: transparent;
   }
 }
 
-.banner {
-  position: relative;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  align-self: flex-start;
-  margin: 180px auto;
-}
 </style>

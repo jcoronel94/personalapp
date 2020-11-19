@@ -69,9 +69,14 @@
 </template>
 
 <script>
-import {validationMixin} from 'vuelidate';
-import {required, email, minLength, maxLength} from 'vuelidate/lib/validators';
-import emailjs from 'emailjs-com';
+import { validationMixin } from "vuelidate";
+import {
+  required,
+  email,
+  minLength,
+  maxLength,
+} from "vuelidate/lib/validators";
+import emailjs from "emailjs-com";
 
 export default {
   mixins: [validationMixin],
@@ -91,10 +96,10 @@ export default {
     sendEmail(e) {
       emailjs
         .sendForm(
-          'service_0bt5s0a',
-          'template_kmf820o',
+          "service_0bt5s0a",
+          "template_kmf820o",
           e.target,
-          'user_kDmSynuXVxta6CPpQOrAr'
+          "user_kDmSynuXVxta6CPpQOrAr"
         )
         .then(
           (result) => {
@@ -102,13 +107,13 @@ export default {
             this.sending = false;
             this.messageSent = true;
             this.messageSaved = true;
-            console.log('SUCCESS!', result.status, result.text);
+            console.log("SUCCESS!", result.status, result.text);
           },
           (error) => {
             this.sending = false;
             this.messageSent = true;
             this.messageSaved = false;
-            console.log('FAILED...', error);
+            console.log("FAILED...", error);
           }
         );
     },
@@ -116,7 +121,7 @@ export default {
       const field = this.$v.form[fieldName];
       if (field) {
         return {
-          'md-invalid': field.$invalid && field.$dirty,
+          "md-invalid": field.$invalid && field.$dirty,
         };
       }
     },

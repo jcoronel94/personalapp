@@ -7,7 +7,6 @@ import router from './router'
 import vuelidate from 'vuelidate'
 import VueCarousel from 'vue-carousel';
 import { BreakpointPlugin } from "vue-breakpoint";
-
  
 Vue.use(BreakpointPlugin, {
   print: { print: true },
@@ -34,3 +33,4 @@ new Vue({
   vuelidate,
   render: h => h(App),
 }).$mount('#app')
+   

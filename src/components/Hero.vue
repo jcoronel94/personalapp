@@ -104,18 +104,18 @@ header {
     bottom: 0;
     left: 0;
   }
-  &:after {
-    animation: rotate-up 0.5s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
-    background: #f9fcff;
-    content: "";
-    height: 40rem;
-    left: -5%;
-    position: absolute;
-    right: -5%;
-    top: 90%;
-    transform-origin: 0 0;
-    z-index: 0;
-  }
+  // &:after {
+  //   animation: rotate-up 0.5s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  //   background: #f9fcff;
+  //   content: "";
+  //   height: 40rem;
+  //   left: -5%;
+  //   position: absolute;
+  //   right: -5%;
+  //   top: 90%;
+  //   transform-origin: 0 0;
+  //   z-index: 0;
+  // }
   &-title {
     animation-delay: 0.8s;
   }

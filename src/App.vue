@@ -78,6 +78,15 @@ body {
     max-width: 1140px;
   }
 }
+
+@media (min-width: 1920px) {
+  .footer .container,
+  .md-toolbar-row,
+  .section .container {
+    max-width: 1420px;
+  }
+}
+
 .container {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -126,6 +135,10 @@ body {
 
 a:not(.md-button):hover{
   text-decoration: none !important;
+}
+
+.wrapper{
+  background-color:#cbcfd4
 }
 
 </style>
