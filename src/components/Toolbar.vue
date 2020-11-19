@@ -11,9 +11,9 @@
     >
       <div class="md-toolbar-row">
         <div class="md-toolbar-section-start">
-          <router-link class="card-link" to="home">
+          <router-link class="card-link" to="/">
             <span
-              v-if="!(isNavOpen && !isOverMainCard)"
+              v-if="!(isNavOpen )"
               :class="{ white: !isOverMainCard }"
               class="md-title"
               style="flex: 1"

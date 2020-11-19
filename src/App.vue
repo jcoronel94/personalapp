@@ -79,13 +79,13 @@ body {
   }
 }
 
-@media (min-width: 1920px) {
-  .footer .container,
-  .md-toolbar-row,
-  .section .container {
-    max-width: 1420px;
-  }
-}
+// @media (min-width: 1920px) {
+//   .footer .container,
+//   .md-toolbar-row,
+//   .section .container {
+//     max-width: 1420px;
+//   }
+// }
 
 .container {
   -webkit-box-orient: vertical;

@@ -5,16 +5,20 @@
         <router-view :key="$route.path" />
       </div>
     </div>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
+
+import AppFooter from '@/components/Footer'
+
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
-  components: {},
+  components: {AppFooter},
 };
 </script>
 
@@ -27,7 +31,7 @@ export default {
   &-raised {
     margin: -60px 30px 0;
     @media screen and (max-width: 600px) {
-       margin: -60px 5px 0;
+       margin: -60px 0  0;
     }
     border-radius: 6px;
     -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),

@@ -7,7 +7,8 @@ import router from './router'
 import vuelidate from 'vuelidate'
 import VueCarousel from 'vue-carousel';
 import { BreakpointPlugin } from "vue-breakpoint";
- 
+import TrContainer from "@/components/ContainerTransclusion";
+
 Vue.use(BreakpointPlugin, {
   print: { print: true },
   portrait: { orientation: "portrait" },
@@ -24,6 +25,8 @@ Vue.use(BreakpointPlugin, {
 Vue.use(VueCarousel);
 Vue.use(VueMaterial)
 Vue.use(vuelidate)
+Vue.component('tr-container',TrContainer)
+
 
 Vue.config.productionTip = false
 

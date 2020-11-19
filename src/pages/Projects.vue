@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <tr-container>
     <span class="md-display-1">Github Projects</span>
     <div
       v-if="projects && projects.length > 0 && pageLoader_isDataLoaded"
@@ -42,12 +42,12 @@
       >
       </md-empty-state>
     </div>
-  </div>
+  </tr-container>
 </template>
 
 <script>
-import {mapActions, mapState, mapGetters} from 'vuex';
-import pageLoader from '@/mixins/pageLoader';
+import { mapActions, mapState, mapGetters } from "vuex";
+import pageLoader from "@/mixins/pageLoader";
 
 export default {
   computed: {
@@ -60,7 +60,7 @@ export default {
     return {};
   },
   methods: {
-    ...mapActions('projects', ['fetchProjects']),
+    ...mapActions("projects", ["fetchProjects"]),
   },
   created() {
     Promise.all([this.fetchProjects()])

@@ -1,20 +1,11 @@
 <template>
-  <div class="container-parent">
-    <div class="bg-container">
-      <div class="container">
-        <about />
-      </div>
-    </div>
-    <!-- <div class="bg-container">
-      <div class="container">
-        <book-detail />
-      </div>
-    </div> -->
-    <div class="bg-container">
-      <div class="container">
-        <email />
-      </div>
-    </div>
+  <div>
+    <tr-container>
+      <about />
+    </tr-container>
+    <tr-container>
+      <email />
+    </tr-container>
   </div>
 </template>
 
@@ -31,7 +22,7 @@ export default {
   components: {
     Email,
     About,
-    // BookDetail
+ 
   },
 };
 </script>

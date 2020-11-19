@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/pages/HelloWorld'
 import Projects from '@/pages/Projects'
 import BlogPostList from '@/pages/BlogPostList'
+import BlogPost from '@/components/BlogPost'
 
 Vue.use(Router)
 
@@ -23,7 +24,12 @@ const router = new Router({
             path: '/blogs',
             name: 'blogs',
             component: BlogPostList
-        }
+        },
+        {
+            path: '/blogs/:slug',
+            name: 'blog-post',
+            component: BlogPost
+          }
     ],
     mode: 'history'
 })
