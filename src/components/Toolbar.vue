@@ -13,7 +13,7 @@
         <div class="md-toolbar-section-start">
           <router-link class="card-link" to="/">
             <span
-              v-if="!(isNavOpen )"
+              v-if="!isNavOpen"
               :class="{ white: !isOverMainCard }"
               class="md-title"
               style="flex: 1"
@@ -54,7 +54,7 @@ export default {
   props: {
     isNavOpen: {
       type: Boolean,
-    },
+    }
   },
   data: () => ({
     isOverMainCard: false,
@@ -69,7 +69,8 @@ export default {
   },
   methods: {
     handleScroll(event) {
-      console.log(this.showNavigation);
+    
+
       if (this.$refs) {
         this.visible = false;
       }
@@ -83,6 +84,9 @@ export default {
       } else {
         this.isOverMainCard = true;
       }
+
+      console.log(this.isOverMainCard)
+
     },
     emitSideNav(e) {
       this.$emit("sideNav");
@@ -94,7 +98,6 @@ export default {
         "md-transparent": !this.isToolbarBehindMainCard,
       };
     },
-
     ...mapState({
       yPositionMainCard: (state) => state.scroll.yPosition,
     }),
@@ -104,6 +107,9 @@ export default {
     this.handleScroll(null);
     window.addEventListener("scroll", this.handleScroll);
     this.isLoaded = true;
+  },
+  updated(){
+    this.handleScroll(null);
   },
   destroy() {
     window.removeEventListener("scroll", null);

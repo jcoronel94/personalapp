@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import Layout from '@/components/Layout';
+import Layout from "@/components/Layout";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Layout,
   },
@@ -15,26 +15,28 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~vue-material/dist/theme/engine'; // Import the theme engine
+@import "~vue-material/dist/theme/engine"; // Import the theme engine
 @include md-register-theme(
-  'default',
+  "default",
   (
     primary: #30517f,
     // The primary color of your applicatio
-      accent: #9fa8da,
+    accent: #9fa8da,
     //theme:dark
-      // The accent or secondary colo,,,,,,,,,,,,,,,,
+    // The accent or secondary colo,,,,,,,,,,,,,,,,,
   )
 );
-@import '~vue-material/dist/theme/all'; // Apply the theme
+@import "~vue-material/dist/theme/all"; // Apply the theme
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 html,
 body {
-  height: 100%;
   margin: 0;
+  height: 100%;
+  /* background: #fff; */
+  background-color: #B8BB97 !important;
 }
 
 .center {
@@ -114,9 +116,10 @@ body {
 }
 
 .bg-container {
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
+  background-color: #f1efef;
   &:not(:first-child) {
-    margin-top: 10px;
+    // margin-top: 10px;
   }
 
   &:nth-child(odd) {
@@ -124,21 +127,19 @@ body {
   }
 }
 
-.md-overlay{
-   position:fixed !important;
+.md-overlay {
+  position: fixed !important;
 }
 
-
-.no-decor{
+.no-decor {
   text-decoration: none;
 }
 
-a:not(.md-button):hover{
+a:not(.md-button):hover {
   text-decoration: none !important;
 }
 
-.wrapper{
-  background-color:#cbcfd4
+.wrapper {
+  background-color: #B8BB97;
 }
-
 </style>

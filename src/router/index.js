@@ -6,13 +6,13 @@ import HelloWorld from '@/pages/HelloWorld'
 import Projects from '@/pages/Projects'
 import BlogPostList from '@/pages/BlogPostList'
 import BlogPost from '@/components/BlogPost'
-
+import NotFound from '@/pages/NotFound'
 Vue.use(Router)
 
 const router = new Router({
     routes: [{
             path: '/',
-            name: 'hello',
+            name: '/',
             component: HelloWorld
         },
         {
@@ -29,7 +29,8 @@ const router = new Router({
             path: '/blogs/:slug',
             name: 'blog-post',
             component: BlogPost
-          }
+        },
+        { path: "*", component: NotFound }
     ],
     mode: 'history'
 })

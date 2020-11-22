@@ -1,15 +1,12 @@
 <template>
   <tr-container>
-    <div style="padding-bottom:20px">
-      <h1>{{ page_title }}</h1>
+    <div style="padding-bottom: 20px">
       <!-- Create `v-for` and apply a `key` for Vue. Here we are using a combination of the slug and index. -->
 
       <div class="md-layout md-gutter md-alignment-left">
-        <md-card
-          class="md-layout-item md-xlarge-size-33 md-large-size-33 md-medium-size-33 md-small-size-50 md-xsmall-size-100"
-          v-for="(post, index) in posts"
-          :key="post.slug + '_' + index"
-        >
+        <div    v-for="(post, index) in posts"
+          :key="post.slug + '_' + index" class ="md-layout-item md-xlarge-size-100 md-large-size-100 md-medium-size-100 md-small-size-100 md-xsmall-size-100">
+        <md-card>
           <router-link :to="'/blogs/' + post.slug">
             <md-card-header>
               <md-card-header-text>
@@ -32,13 +29,13 @@
         <md-button>Action</md-button>
       </md-card-actions> -->
         </md-card>
+        </div>
       </div>
     </div>
   </tr-container>
 </template>
 
 <script>
-
 import butter from "@/buttercms";
 export default {
   data() {
@@ -62,14 +59,27 @@ export default {
   created() {
     this.getPosts();
   },
-
 };
 </script>
 
-<style lang="sass" scoped>
-.md-card
-  width: 320px
-  margin: 4px
-  display: inline-block
-  vertical-align: top
+<style lang="scss" scoped>
+.md-card {
+  min-height:150px;
+  margin:4px;
+  width:100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.md-layout-item {
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    &:after {
+      width: 100%;
+      height: 100%;
+      display: block;
+      content: " ";
+    }
+}
 </style>

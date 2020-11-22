@@ -12,7 +12,11 @@
       :md-active.sync="showNavigation"
     >
       <md-toolbar class="md-transparent" md-elevation="0">
-        <router-link @click.native="showNavigation = false" class="no-decor" to="/">
+        <router-link
+          @click.native="showNavigation = false"
+          class="no-decor"
+          to="/"
+        >
           <span class="md-title">COGITO</span>
         </router-link>
       </md-toolbar>
@@ -25,6 +29,10 @@
             >
           </router-link> -->
       <md-list>
+        <md-list-item to="/" @click="showNavigation = false">
+          <md-icon>home</md-icon>
+          <span class="md-list-item-text"> Welcome! </span>
+        </md-list-item>
         <md-list-item to="/blogs" @click="showNavigation = false">
           <md-icon>chat_bubble</md-icon>
           <span class="md-list-item-text"> Blog Posts </span>
@@ -61,12 +69,15 @@ export default {
     resumeLink() {
       return process.env.VUE_APP_RESUME;
     },
+    currentRouteHome() {
+      return this.$route.name === "/";
+    },
   },
-  methods:{
-    toggleSideBar(bool){
-      this.showNavigation = bool
-      console.log(this.showNavigation)
-    }
+  methods: {
+    toggleSideBar(bool) {
+      this.showNavigation = bool;
+      console.log(this.showNavigation);
+    },
   },
   components: {
     MainContainer,

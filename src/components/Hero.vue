@@ -1,12 +1,14 @@
 <template>
   <header>
     <section ref="maincard" class="header-content">
-      <img
-        class="rocky-dashed animate-pop-in"
-        src="https://cdn2.scratch.mit.edu/get_image/gallery/27493645_170x100.png"
-      />
-      <h1 class="header-title animate-pop-in">Hi, I'm Jonathan!</h1>
-      <h3 class="header-subtitle animate-pop-in">Come hang out for a bit</h3>
+      <img class="rocky-dashed animate-pop-in" :src="currentRouteImage" />
+      <template v-if="currentRoute === '/'">
+        <h1 class="header-title animate-pop-in">Hi, I'm Jonathan!</h1>
+        <h3 class="header-subtitle animate-pop-in">Come hang out for a bit</h3>
+      </template>
+      <template v-else-if="currentRoute === 'blogs'">
+        <h1 class="header-title animate-pop-in">My Blogs</h1>
+      </template>
     </section>
   </header>
 </template>
@@ -28,17 +30,25 @@ export default {
       required: false,
     },
   },
-  data(){
-      return {
-        scrollModifier:1
-      }
-     
+  data() {
+    return {
+      scrollModifier: 1,
+    };
   },
   computed: {
-    maincardYPosition() {
-      var top = this.$refs.maincard.getBoundingClientRect().top;
+    currentRoute() {
+      return this.$route.name;
+    },
 
-      return top;
+    currentRouteImage() {
+      let routeName = this.$route.name;
+      if (routeName == "/") {
+        return "https://cdn2.scratch.mit.edu/get_image/gallery/27493645_170x100.png";
+      } else if (routeName === "blogs") {
+        return require("../assets/blog.png");
+      } else {
+        return "";
+      }
     },
   },
   methods: {
@@ -46,19 +56,10 @@ export default {
       this.$store.commit("scroll/setYPosition", yPosition);
     },
     handleScroll(event) {
-     this.scrollModifier = 1 - (window.pageYOffset + 1) / 280;
-
-      if (this.scrollModifier < 0) {
-        this.scrollModifier = 0;
-      }
-
-      document.body.style.setProperty("--scroll", this.scrollModifier);
       this.setYPosition(this.$refs.maincard.getBoundingClientRect().top);
     },
   },
-  created(){
-
-  },
+  created() {},
   mounted() {
     this.handleScroll(); //seed the event
     window.addEventListener("scroll", this.handleScroll);
@@ -89,10 +90,13 @@ header {
   text-align: center;
   transform-style: preserve-3d;
   perspective: 100px;
+  &.nohero {
+    height: 50vh;
+  }
   &:before {
     animation: fade-slide-down 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
-      url(../assets/space.jpg) no-repeat bottom;
+      url(../assets/space.jpg) repeat-y bottom;
     overflow: hidden;
     position: relative;
     content: "";
@@ -166,11 +170,8 @@ header {
 }
 
 @keyframes rotate-up {
- 
-
   100% {
-    transform: rotateZ(calc(-4deg * var(--scroll) ));
+    transform: rotateZ(calc(-4deg * var(--scroll)));
   }
- 
 }
 </style>
