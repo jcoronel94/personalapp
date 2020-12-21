@@ -36,7 +36,7 @@ body {
   margin: 0;
   height: 100%;
   /* background: #fff; */
-  background-color: #B8BB97 !important;
+  background-color: #0e131d !important;
 }
 
 .center {
@@ -140,6 +140,6 @@ a:not(.md-button):hover {
 }
 
 .wrapper {
-  background-color: #B8BB97;
+  background-color: #0e131d;
 }
 </style>

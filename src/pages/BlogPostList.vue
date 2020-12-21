@@ -78,7 +78,7 @@ export default {
     &:after {
       width: 100%;
       height: 100%;
-      display: block;
+      display: none;
       content: " ";
     }
 }

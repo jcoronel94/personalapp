@@ -1,21 +1,11 @@
 <template>
   <footer data-background-color="black" class="footer">
     <div class="container">
-      <!-- <nav>
-        <ul>
-          <li><a href="https://www.creative-tim.com"> Creative Tim </a></li>
-          <li>
-            <a href="https:///presentation.creative-tim.com"> About Us </a>
-          </li>
-          <li><a href="https:///blog.creative-tim.com"> Blog </a></li>
-          <li><a href="https://www.creative-tim.com/license"> Licenses </a></li>
-        </ul>
-      </nav> -->
       <div class="copyright flex-container column">
         <div class="flex-item">
           Powered by
           <a href="https://buttercms.com" target="_blank">
-          <img class="butter-logo" src="../assets/butter-b.png" />
+          <img class="butter-logo" src="../assets/butter-w.png" />
           </a>
         </div>
         <div class="flex-item">
@@ -39,6 +29,9 @@ export default {};
 .butter-logo {
   width: 200px;
   margin-left:10px;
+  height:55px;
+  object-fit: cover;
+  object-position: 20% 10%;
 }
 
 .flex-container {
@@ -64,5 +57,9 @@ export default {};
 
 .flex-item {
   text-align: center;
+}
+
+.copyright{
+  color:white;
 }
 </style>
