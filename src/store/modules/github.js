@@ -8,7 +8,6 @@ export default {
     },
     actions: {
         fetchProjects({ state, commit }) {
-            console.log(process.env.GITHUBAPI)
             return axios.get('https://api.github.com/users/jcoronel94/repos')
                 .then(res => {
                     const projects = res.data

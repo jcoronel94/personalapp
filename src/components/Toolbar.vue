@@ -69,24 +69,15 @@ export default {
   },
   methods: {
     handleScroll(event) {
-    
-
       if (this.$refs) {
         this.visible = false;
       }
       var toolbarTop = this.$refs.visibleToolbar.getBoundingClientRect().top;
-
-      console.log("main " + this.yPositionMainCard);
-      console.log("tool " + toolbarTop);
-
       if (toolbarTop <= this.yPositionMainCard) {
         this.isOverMainCard = false;
       } else {
         this.isOverMainCard = true;
       }
-
-      console.log(this.isOverMainCard)
-
     },
     emitSideNav(e) {
       this.$emit("sideNav");
@@ -103,7 +94,6 @@ export default {
     }),
   },
   mounted() {
-    console.log(this.isNavOpen);
     this.handleScroll(null);
     window.addEventListener("scroll", this.handleScroll);
     this.isLoaded = true;

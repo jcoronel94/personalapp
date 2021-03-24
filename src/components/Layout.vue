@@ -76,7 +76,6 @@ export default {
   methods: {
     toggleSideBar(bool) {
       this.showNavigation = bool;
-      console.log(this.showNavigation);
     },
   },
   components: {

@@ -107,13 +107,11 @@ export default {
             this.sending = false;
             this.messageSent = true;
             this.messageSaved = true;
-            console.log("SUCCESS!", result.status, result.text);
           },
           (error) => {
             this.sending = false;
             this.messageSent = true;
             this.messageSaved = false;
-            console.log("FAILED...", error);
           }
         );
     },
@@ -134,7 +132,6 @@ export default {
     validateMessage(e) {
       this.sending = true;
       this.$v.$touch();
-      console.log(this.$v);
 
       if (!this.$v.$invalid) {
         this.sendEmail(e);

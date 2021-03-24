@@ -1,25 +1,28 @@
 <template>
   <tr-container>
-    <div id="blog-post">
+    <div v-if="post" id="blog-post">
       <h1>{{ post.data.title }}</h1>
       <h4>
         {{ post.data.author.first_name }} {{ post.data.author.last_name }}
       </h4>
       <div v-html="post.data.body"></div>
 
+
+      <md-divider />
+
       <router-link
-        v-if="post.meta.previous_post"
-        :to="/blog/ + post.meta.previous_post.slug"
-        class="button"
+        v-if="((post||{}).meta||{}).previous_post"
+        :to="/blogs/ + post.meta.previous_post.slug"
+        class="md-button"
       >
-        {{ post.meta.previous_post.title }}
+          Previous Blog
       </router-link>
       <router-link
-        v-if="post.meta.next_post"
-        :to="/blog/ + post.meta.next_post.slug"
-        class="button"
+        v-if="((post||{}).meta||{}).next_post"
+        :to="/blogs/ + post.meta.next_post.slug"
+        class="md-button"
       >
-        {{ post.meta.next_post.title }}
+        Next Blog
       </router-link>
     </div>
   </tr-container>
@@ -31,7 +34,7 @@ export default {
   name: "blog-post",
   data() {
     return {
-      post: {},
+      post: null,
     };
   },
   methods: {

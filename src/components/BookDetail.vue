@@ -59,7 +59,6 @@ export default {
     ...mapActions('books', ['fetchReadBooks']),
   },
   created() {
-    console.log(this.books);
     Promise.all([this.fetchReadBooks()])
       .then(() => this.pageLoader_resolveData())
       .catch((err) => {
