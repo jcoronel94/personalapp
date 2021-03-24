@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header v-bind:class="{'sm-header' : (currentRoute !='/'  && currentRoute !='blogs')}">
     <section ref="maincard" class="header-content">
       <img class="rocky-dashed animate-pop-in" :src="currentRouteImage" />
       <template v-if="currentRoute === '/'">
@@ -90,9 +90,11 @@ header {
   text-align: center;
   transform-style: preserve-3d;
   perspective: 100px;
-  &.nohero {
-    height: 50vh;
+  &.sm-header{
+    height: 185px;
+    
   }
+
   &:before {
     animation: fade-slide-down 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
@@ -108,18 +110,6 @@ header {
     bottom: 0;
     left: 0;
   }
-  // &:after {
-  //   animation: rotate-up 0.5s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
-  //   background: #f9fcff;
-  //   content: "";
-  //   height: 40rem;
-  //   left: -5%;
-  //   position: absolute;
-  //   right: -5%;
-  //   top: 90%;
-  //   transform-origin: 0 0;
-  //   z-index: 0;
-  // }
   &-title {
     animation-delay: 0.8s;
   }

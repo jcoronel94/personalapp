@@ -52,3 +52,20 @@ export default {
 };
 </script>
 
+
+<style lang="scss" scoped>
+h1{
+  line-height:30px;
+}
+/deep/ pre[class^="language-"] {
+  width:auto;
+  overflow-y:auto;
+  background-color: #f1efef;
+}
+.language-javascript{
+   width:auto;
+  overflow-y:auto;
+
+}
+</style>
+

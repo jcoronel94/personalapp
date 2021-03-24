@@ -5,7 +5,7 @@
 
       <div class="md-layout md-gutter md-alignment-left">
         <div    v-for="(post, index) in posts"
-          :key="post.slug + '_' + index" class ="md-layout-item md-xlarge-size-100 md-large-size-100 md-medium-size-100 md-small-size-100 md-xsmall-size-100">
+          :key="post.slug + '_' + index" class ="md-layout-item  md-medium-size-50 md-small-size-100">
         <md-card>
           <router-link :to="'/blogs/' + post.slug">
             <md-card-header>
@@ -23,11 +23,6 @@
               </md-card-media>
             </md-card-header>
           </router-link>
-
-          <!-- <md-card-actions>
-        <md-button>Action</md-button>
-        <md-button>Action</md-button>
-      </md-card-actions> -->
         </md-card>
         </div>
       </div>

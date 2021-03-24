@@ -117,13 +117,13 @@ body {
 
 .bg-container {
   // margin-bottom: 20px;
-  background-color: #f1efef;
+  background-color: #fff;
   &:not(:first-child) {
     // margin-top: 10px;
   }
 
   &:nth-child(odd) {
-    background-color: #f1efef;
+    background-color: #fff;
   }
 }
 
