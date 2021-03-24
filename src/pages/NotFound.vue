@@ -1,7 +1,7 @@
 <template>
   <tr-container>
     <div style="padding-bottom: 20px">
-      <div v-html="post.data.body"></div>
+      <div v-html="post.data.body"/>
     </div>
   </tr-container>
 </template>
