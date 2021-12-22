@@ -7,7 +7,7 @@
         <div
           v-for="(post, index) in posts"
           :key="post.slug + '_' + index"
-          class="md-layout-item md-medium-size-50 md-small-size-100"
+          class="md-layout-item md-size-33 md-medium-size-50 md-small-size-100"
         >
           <md-card>
             <router-link :to="'/blogs/' + post.slug">
@@ -72,9 +72,12 @@ export default {
   vertical-align: top;
   .md-card-media{
     border-bottom:2px gainsboro solid;
-    padding-bottom:10
-    px;
+    padding-bottom:10px;
   }
+}
+
+.md-card-content{
+      word-break: break-word;
 }
 
 .md-layout-item {
